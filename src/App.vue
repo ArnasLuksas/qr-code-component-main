@@ -1,11 +1,11 @@
 <template>
-  <div class="container">
+  <main class="container">
     <QrImage />
 
     <CardTitle :titleMessage="sentences[0].name" />
 
     <CardPara :paraMessage="sentences[1].name" />
-  </div>
+  </main>
   <footer>
     <div class="attribution">
       Challenge by
@@ -60,21 +60,21 @@ export default {
 }
 #app {
   background: hsl(212, 45%, 89%);
-  height: 100vh;
   display: flex;
-  justify-content: space-between;
-  flex-direction: column;
   align-items: center;
+  justify-content: center;
+  flex-direction: column;
+    position: relative;
+  min-height: 100vh;
+
 }
 .container {
-  margin-top: 90px;
   border-radius: 20px;
   padding: 20px;
   background: white;
   max-width: 375px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+
+  
 }
 div {
   font-family: "Outfit", sans-serif;
@@ -84,5 +84,8 @@ footer {
   width: 100%;
   font-size: 15px;
   padding: 5px;
+  position: absolute;
+  bottom: 0;
+
 }
 </style>
