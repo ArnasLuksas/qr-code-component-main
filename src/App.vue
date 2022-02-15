@@ -1,26 +1,88 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div class="container">
+    <QrImage />
+
+    <CardTitle :titleMessage="sentences[0].name" />
+
+    <CardPara :paraMessage="sentences[1].name" />
+  </div>
+  <footer>
+    <div class="attribution">
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+        >Frontend Mentor</a
+      >. Coded by <a :href="web">{{ fullName.name }} {{ fullName.lastname }}</a
+      >.
+    </div>
+  </footer>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import QrImage from "./components/QrImage.vue";
+import CardTitle from "./components/CardTitle.vue";
+import CardPara from "./components/CardPara.vue";
 
 export default {
-  name: 'App',
+  name: "App",
   components: {
-    HelloWorld
-  }
-}
+    QrImage,
+    CardTitle,
+    CardPara,
+  },
+  data() {
+    return {
+      sentences: [
+        {
+          id: 1,
+          name: "Improve your front-end skills by building projects",
+        },
+        {
+          id: 2,
+          name: "Scan the QR code to visit Frontend Mentor and take your coding skills to the next level",
+        },
+      ],
+      fullName: {
+        name: "Arnas",
+        lastname: "Luksas",
+      },
+      web: "https://www.arnasluksas.lt",
+    };
+  },
+};
 </script>
 
 <style>
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  background: hsl(212, 45%, 89%);
+  height: 100vh;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  align-items: center;
+}
+.container {
+  margin-top: 90px;
+  border-radius: 20px;
+  padding: 20px;
+  background: white;
+  max-width: 375px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+div {
+  font-family: "Outfit", sans-serif;
+}
+footer {
   text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+  width: 100%;
+  font-size: 15px;
+  padding: 5px;
 }
 </style>
