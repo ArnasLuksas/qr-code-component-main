@@ -29,7 +29,7 @@ npm run build
 
 ### Screenshot
 
-<img width="1275" alt="" src="https://github.com/ArnasLuksas/qr-code-component-main/src/assets/firstVue.png">
+<img width="1275" alt="" src="https://raw.githubusercontent.com/ArnasLuksas/qr-code-component-main/main/src/assets/firstVue.png>
 
 ### Built with
 
